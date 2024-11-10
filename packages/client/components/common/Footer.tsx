@@ -1,15 +1,14 @@
-import { IconBrandGithub } from "@tabler/icons-react";
+import { IconBrandGithub, IconBrandX } from "@tabler/icons-react";
 import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-gray-500/20 bg-background">
+    <footer className="border-t border-gray-500/20">
       <div className="container flex flex-col gap-8 px-4 py-10 md:flex-row md:py-14">
         <div className="flex flex-col gap-2 min-w-[240px] lg:min-w-[400px]">
           <h3 className="text-lg font-semibold">Elixir UI</h3>
           <p className="text-sm text-muted-foreground">
-            Beautiful, modern components <br />
-            built with Radix UI and Tailwind CSS.
+            Modern components, super fast shipment
           </p>
           <div className="flex items-center gap-2 pt-2">
             <Link
@@ -18,6 +17,14 @@ export default function Footer() {
             >
               <IconBrandGithub className="w-4 h-4" />
               <span className="sr-only">GitHub</span>
+            </Link>
+
+            <Link
+              href="https://x.com"
+              className="inline-flex items-center justify-center rounded-md w-9 h-9 bg-background hover:bg-muted"
+            >
+              <IconBrandX className="w-4 h-4" />
+              <span className="sr-only">X</span>
             </Link>
           </div>
         </div>

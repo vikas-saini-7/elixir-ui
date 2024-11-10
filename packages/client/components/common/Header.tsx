@@ -1,10 +1,18 @@
+"use client";
 import { IconSun } from "@tabler/icons-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React from "react";
 
-const Header: React.FC = () => {
+type HeaderProps = {
+  showOnHome?: boolean;
+};
+
+const Header: React.FC<HeaderProps> = ({ showOnHome }) => {
+  const pathname = usePathname();
+  if (pathname === "/" && !showOnHome) return null;
   return (
-    <div className="flex items-center justify-between py-4 px-8 border-b border-gray-500/30">
+    <div className="flex items-center justify-between py-4 px-8 border-b border-gray-500/30 z-50">
       <div className="flex items-center gap-8">
         <Link href="/">
           <h1 className="font-bold text-lg">Elixir UI</h1>
@@ -32,7 +40,7 @@ const Header: React.FC = () => {
           type="text"
           placeholder="Search (Ctrl + k)"
         />
-        <IconSun/>
+        <IconSun />
       </div>
     </div>
   );
