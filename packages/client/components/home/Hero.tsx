@@ -43,7 +43,7 @@ export default function Hero() {
         </div>
 
         {/* Content */}
-        <div className="relative flex min-h-[90vh] flex-col items-start px-4 pt-48 pl-32">
+        <div className="relative flex min-h-[90vh] flex-col items-center md:items-start px-4 pt-48 md:pl-32">
           <h1 className="animate-fade-up bg-gradient-to-br from-white to-gray-400 bg-clip-text text-center text-6xl font-bold tracking-tight text-transparent sm:text-7xl">
             Elixir UI
           </h1>

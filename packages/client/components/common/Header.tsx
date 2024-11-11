@@ -17,7 +17,7 @@ const Header: React.FC<HeaderProps> = ({ showOnHome }) => {
         <Link href="/">
           <h1 className="font-bold text-lg">Elixir UI</h1>
         </Link>
-        <nav>
+        <nav className="hidden md:block">
           <ul className="flex items-center gap-4 text-sm">
             <Link href="/docs">
               <li>Docs</li>
@@ -36,7 +36,7 @@ const Header: React.FC<HeaderProps> = ({ showOnHome }) => {
       </div>
       <div className="flex items-center gap-4">
         <input
-          className="px-3 py-1 rounded-md bg-gray-500/20"
+          className="hidden md:block px-3 py-1 rounded-md bg-gray-500/20"
           type="text"
           placeholder="Search (Ctrl + k)"
         />
