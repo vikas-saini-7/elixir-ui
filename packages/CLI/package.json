@@ -1,0 +1,31 @@
+{
+  "name": "@elixir-labs/ui",
+  "version": "1.0.4",
+  "description": "Modern Components, super fast shipment.",
+  "type": "module",
+  "main": "index.js",
+  "bin": {
+    "@elixir-labs/ui": "./index.js"
+  },
+  "scripts": {},
+  "author": "Vikas Saini",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0"
+  },
+  "keywords": [
+    "cli",
+    "elixir-ui",
+    "ui-components",
+    "react",
+    "tailwindcss",
+    "component-generator",
+    "elixir-labs",
+    "elixir-labs/ui",
+    "ui-library",
+    "modern-component",
+    "react-ui-library",
+    "nextjs-ui-library"
+  ]
+}
