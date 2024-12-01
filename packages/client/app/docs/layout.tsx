@@ -9,7 +9,7 @@ export default function DocsLayout({
   return (
     <div className="mx-8 flex">
       <Sidebar />
-      <main className="w-4/5 p-4">{children}</main>
+      <main className="w-4/5 p-6 lg:pl-12 lg:pr-8 lg:mb-8">{children}</main>
     </div>
   );
 }

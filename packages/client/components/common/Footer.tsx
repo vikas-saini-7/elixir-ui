@@ -6,7 +6,14 @@ export default function Footer() {
     <footer className="border-t border-gray-500/20">
       <div className="container flex flex-col gap-8 px-4 py-10 md:flex-row md:py-14">
         <div className="flex flex-col gap-2 min-w-[240px] lg:min-w-[400px] md:pl-4">
-          <h3 className="text-lg font-semibold">Elixir UI</h3>
+          <h3 className="text-lg font-semibold flex items-center mb-2">
+            <img
+              className="w-[40px] mr-3"
+              src="/images/elixir-ui-transparent-svg.svg"
+              alt="Not Found"
+            />
+            Elixir UI
+          </h3>
           <p className="text-sm text-muted-foreground">
             Modern components, super fast shipment
           </p>
