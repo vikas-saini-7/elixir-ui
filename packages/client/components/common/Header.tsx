@@ -13,7 +13,7 @@ const Header: React.FC<HeaderProps> = ({ showOnHome }) => {
   const pathname = usePathname();
   if (pathname === "/" && !showOnHome) return null;
   return (
-    <div className="flex items-center justify-between py-4 px-8 border-b border-gray-500/30 z-50">
+    <div className="flex items-center justify-between py-4 px-8 border-b border-gray-500/30 backdrop-blur z-50 sticky top-0">
       <div className="flex items-center gap-8">
         <Link href="/">
           <h1 className="font-bold text-lg flex items-center text-nowrap">

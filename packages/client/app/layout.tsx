@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   title: "Elixir UI - Modern components, super fast shipment",
   description:
     "Elixir UI is a modern component library for React. Modern components, super fast shipment.",
+  icons: {
+    icon: "/elixir-ui-favicon.png",
+  },
 };
 
 export default function RootLayout({

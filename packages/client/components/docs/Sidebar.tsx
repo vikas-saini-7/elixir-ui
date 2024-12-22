@@ -37,7 +37,7 @@ const installation = [
 
 const Sidebar: React.FC = () => {
   return (
-    <div className="w-1/6 h-[calc(100vh-65px)] overflow-auto p-4 border-r border-gray-500/30">
+    <div className="w-1/6 h-[calc(100vh-65px)] overflow-auto p-4 border-r border-gray-500/30 sticky top-[69px]">
       {/* list 1 */}
       <div className="mb-4">
         <h1 className="font-bold mb-2">Getting Started</h1>
