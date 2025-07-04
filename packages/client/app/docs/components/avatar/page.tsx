@@ -97,7 +97,7 @@ export default function MyComponent() {
           <div className="p-6 border border-gray-700 rounded-lg bg-gray-900/50">
             <div className="flex items-center gap-4">
               <DemoAvatar>
-                <DemoAvatarImage src="/invalid-image.jpg" alt="Avatar" />
+                {/* <DemoAvatarImage src="" alt="Avatar" /> */}
                 <DemoAvatarFallback>JD</DemoAvatarFallback>
               </DemoAvatar>
               <span className="text-gray-300">
@@ -201,11 +201,11 @@ export default function MyComponent() {
                 <DemoAvatarFallback>U1</DemoAvatarFallback>
               </DemoAvatar>
               <DemoAvatar className="border-2 border-gray-900">
-                <DemoAvatarImage src="/invalid.jpg" alt="User 2" />
+                <DemoAvatarImage src="https://github.com/shadcn.png" alt="User 2" />
                 <DemoAvatarFallback>U2</DemoAvatarFallback>
               </DemoAvatar>
               <DemoAvatar className="border-2 border-gray-900">
-                <DemoAvatarImage src="/invalid.jpg" alt="User 3" />
+                <DemoAvatarImage src="https://github.com/shadcn.png" alt="User 3" />
                 <DemoAvatarFallback>U3</DemoAvatarFallback>
               </DemoAvatar>
               <DemoAvatar className="border-2 border-gray-900">
@@ -285,7 +285,7 @@ export default function MyComponent() {
                   className="flex items-center gap-3 p-2 rounded hover:bg-gray-800/50"
                 >
                   <DemoAvatar className="h-8 w-8">
-                    <DemoAvatarImage src="/invalid.jpg" alt={member.name} />
+                    <DemoAvatarImage src="https://github.com/shadcn.png" alt={member.name} />
                     <DemoAvatarFallback className="text-xs">
                       {member.initials}
                     </DemoAvatarFallback>

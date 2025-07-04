@@ -31,9 +31,9 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
   };
 
   return (
-    <div className="group relative my-6 overflow-hidden rounded-xl border border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-900">
+    <div className="group relative my-6 overflow-hidden rounded-xl border border-gray-200 bg-gray-50 dark:border-gray-500/20 dark:bg-gray-500/20">
       {/* Header */}
-      <div className="flex items-center justify-between border-b border-gray-200 bg-gray-100 px-4 py-2 dark:border-gray-800 dark:bg-gray-800">
+      <div className="flex items-center justify-between border-b border-gray-200 bg-gray-100 px-4 py-2 dark:border-gray-500/20 dark:bg-gray-500/20">
         <div className="flex items-center gap-2">
           {/* Traffic light dots */}
           <div className="flex gap-1.5">
@@ -51,7 +51,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
         {/* Copy button */}
         <button
           onClick={handleCopy}
-          className="flex items-center gap-2 rounded-md bg-white px-3 py-1.5 text-sm font-medium text-gray-700 shadow-sm transition-all hover:bg-gray-50 hover:shadow dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
+          className="flex items-center gap-2 rounded-md bg-white px-3 py-1.5 text-sm font-medium text-gray-700 shadow-sm transition-all hover:bg-gray-50 hover:shadow dark:bg-gray-500/50 dark:text-gray-300 dark:hover:bg-gray-600"
           aria-label="Copy code to clipboard"
         >
           {copied ? (
@@ -101,7 +101,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
           customStyle={{
             margin: 0,
             padding: "1.5rem",
-            backgroundColor: "transparent",
+            backgroundColor: "#070707", // Dark gray background
             fontSize: "0.875rem",
             lineHeight: "1.5",
           }}

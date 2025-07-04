@@ -79,20 +79,6 @@ const searchData: SearchResult[] = [
     href: "/docs/components/input",
     category: "Components",
   },
-  // Templates & Examples
-  {
-    title: "Templates",
-    description: "Example use cases and component templates",
-    href: "/docs/templates",
-    category: "Templates",
-  },
-  // More
-  {
-    title: "Changelog",
-    description: "Latest updates, features, and bug fixes",
-    href: "/docs/changelog",
-    category: "More",
-  },
 ];
 
 const GlobalSearch = () => {
@@ -103,6 +89,10 @@ const GlobalSearch = () => {
 
   const handleSearchClick = () => {
     setIsSearchActive(!isSearchActive);
+  };
+
+  const handleBackdropClick = () => {
+    setIsSearchActive(false);
   };
 
   const handleSearch = (query: string) => {
@@ -176,7 +166,7 @@ const GlobalSearch = () => {
 
       <div
         onClick={handleSearchClick}
-        className="md:hidden p-2 rounded-md hover:bg-gray-500/20 transition-colors cursor-pointer"
+        className="md:hidden p-2 rounded-md hover:bg-gray-500/50 transition-colors cursor-pointer"
       >
         <IconSearch size={20} className="text-gray-400" />
       </div>
@@ -184,15 +174,15 @@ const GlobalSearch = () => {
       <AnimatePresence>
         {isSearchActive && (
           <motion.div
-            className="fixed top-0 left-0 w-full h-screen z-50"
+            className="fixed top-0 left-0 w-full h-screen z-50 bg-black/80"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2, ease: "easeInOut" }}
           >
             <motion.div
-              className="absolute top-0 left-0 w-full h-screen bg-black bg-opacity-80 backdrop-blur-lg"
-              onClick={handleSearchClick}
+              className="absolute top-0 left-0 w-full h-screen"
+              onClick={handleBackdropClick}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -200,7 +190,8 @@ const GlobalSearch = () => {
             />
             <div className="relative flex items-start justify-center pt-16 px-4">
               <motion.div
-                className="relative w-full max-w-2xl bg-gray-900 border border-gray-700 rounded-lg shadow-2xl"
+                className="relative w-full max-w-2xl bg-[#171717] border border-gray-500/20 rounded-lg shadow-2xl"
+                onClick={(e) => e.stopPropagation()}
                 initial={{ opacity: 0, y: -50, scale: 0.95 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -50, scale: 0.95 }}
@@ -239,7 +230,7 @@ const GlobalSearch = () => {
                             key={index}
                             href={result.href}
                             onClick={handleResultClick}
-                            className="block px-3 py-2 rounded-md hover:bg-gray-800 transition-colors"
+                            className="block px-3 py-2 rounded-md hover:bg-gray-500/50 transition-colors"
                           >
                             <div className="font-medium text-white">
                               {result.title}
@@ -275,7 +266,7 @@ const GlobalSearch = () => {
                       <Link
                         href="/docs/introduction"
                         onClick={handleResultClick}
-                        className="block px-3 py-2 rounded-md hover:bg-gray-800 transition-colors"
+                        className="block px-3 py-2 rounded-md hover:bg-gray-500/20 transition-colors"
                       >
                         <div className="font-medium text-white">
                           Introduction
@@ -287,7 +278,7 @@ const GlobalSearch = () => {
                       <Link
                         href="/docs/components/button"
                         onClick={handleResultClick}
-                        className="block px-3 py-2 rounded-md hover:bg-gray-800 transition-colors"
+                        className="block px-3 py-2 rounded-md hover:bg-gray-500/20 transition-colors"
                       >
                         <div className="font-medium text-white">
                           Button Component
@@ -299,7 +290,7 @@ const GlobalSearch = () => {
                       <Link
                         href="/docs/installation"
                         onClick={handleResultClick}
-                        className="block px-3 py-2 rounded-md hover:bg-gray-800 transition-colors"
+                        className="block px-3 py-2 rounded-md hover:bg-gray-500/20 transition-colors"
                       >
                         <div className="font-medium text-white">
                           Installation
@@ -329,7 +320,7 @@ const GlobalSearch = () => {
                       to close
                     </span>
                   </div>
-                  <span>Powered by Elixir UI</span>
+                  {/* <span>Powered by Elixir UI</span> */}
                 </div>
               </motion.div>
             </div>

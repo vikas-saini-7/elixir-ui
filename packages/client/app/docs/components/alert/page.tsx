@@ -124,7 +124,7 @@ export default function MyComponent() {
           <DocsHeading level={3}>With Icons</DocsHeading>
           <div className="p-6 border border-gray-700 rounded-lg bg-gray-900/50 space-y-4">
             <DemoAlert>
-              <div className="w-4 h-4 absolute left-4 top-4">ℹ️</div>
+              <div className="w-4 h-4 absolute left-4 top-4"></div>
               <DemoAlertTitle>Information</DemoAlertTitle>
               <DemoAlertDescription>
                 This is an informational message with an icon.
@@ -132,7 +132,7 @@ export default function MyComponent() {
             </DemoAlert>
 
             <DemoAlert variant="destructive">
-              <div className="w-4 h-4 absolute left-4 top-4">⚠️</div>
+              <div className="w-4 h-4 absolute left-4 top-4"></div>
               <DemoAlertTitle>Warning</DemoAlertTitle>
               <DemoAlertDescription>
                 This action cannot be undone. This will permanently delete your
@@ -164,16 +164,18 @@ export default function MyComponent() {
         <div>
           <DocsHeading level={3}>Different Use Cases</DocsHeading>
           <div className="p-6 border border-gray-700 rounded-lg bg-gray-900/50 space-y-4">
-            <DemoAlert>
-              <div className="w-4 h-4 absolute left-4 top-4">✅</div>
-              <DemoAlertTitle>Success</DemoAlertTitle>
-              <DemoAlertDescription>
-                Your changes have been saved successfully.
-              </DemoAlertDescription>
-            </DemoAlert>
+            <div>
+              <DemoAlert>
+                <div className="w-4 h-4 absolute left-4 top-4"></div>
+                <DemoAlertTitle>Success</DemoAlertTitle>
+                <DemoAlertDescription>
+                  Your changes have been saved successfully.
+                </DemoAlertDescription>
+              </DemoAlert>
+            </div>
 
             <DemoAlert>
-              <div className="w-4 h-4 absolute left-4 top-4">💡</div>
+              <div className="w-4 h-4 absolute left-4 top-4"></div>
               <DemoAlertTitle>Tip</DemoAlertTitle>
               <DemoAlertDescription>
                 You can use keyboard shortcuts to navigate faster. Press Ctrl+K
@@ -182,7 +184,7 @@ export default function MyComponent() {
             </DemoAlert>
 
             <DemoAlert>
-              <div className="w-4 h-4 absolute left-4 top-4">🔄</div>
+              <div className="w-4 h-4 absolute left-4 top-4"></div>
               <DemoAlertTitle>Update Available</DemoAlertTitle>
               <DemoAlertDescription>
                 A new version of the application is available.{" "}
@@ -227,7 +229,7 @@ export default function MyComponent() {
           <DocsHeading level={3}>Without Title</DocsHeading>
           <div className="p-6 border border-gray-700 rounded-lg bg-gray-900/50">
             <DemoAlert>
-              <div className="w-4 h-4 absolute left-4 top-4">📢</div>
+              <div className="w-4 h-4 absolute left-4 top-4"></div>
               <DemoAlertDescription>
                 New features have been added to the dashboard. Check out the
                 latest updates in the changelog.
@@ -248,9 +250,7 @@ export default function MyComponent() {
           <DocsHeading level={3}>Custom Styling</DocsHeading>
           <div className="p-6 border border-gray-700 rounded-lg bg-gray-900/50 space-y-4">
             <DemoAlert className="border-blue-600 bg-blue-900/20 text-blue-100">
-              <div className="w-4 h-4 absolute left-4 top-4 text-blue-400">
-                🔵
-              </div>
+              <div className="w-4 h-4 absolute left-4 top-4 text-blue-400"></div>
               <DemoAlertTitle className="text-blue-300">
                 Custom Blue Alert
               </DemoAlertTitle>
@@ -260,9 +260,7 @@ export default function MyComponent() {
             </DemoAlert>
 
             <DemoAlert className="border-green-600 bg-green-900/20 text-green-100">
-              <div className="w-4 h-4 absolute left-4 top-4 text-green-400">
-                🟢
-              </div>
+              <div className="w-4 h-4 absolute left-4 top-4 text-green-400"></div>
               <DemoAlertTitle className="text-green-300">
                 Custom Green Alert
               </DemoAlertTitle>
