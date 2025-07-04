@@ -4,7 +4,9 @@
 
 A powerful CLI tool for generating beautiful, accessible UI components with modern styling using Tailwind CSS. Build React applications faster with pre-designed, customizable components.
 
-![Elixir UI](./packages/client/public/images/elixir-ui-logo-transparent.png)
+<div align="center">
+  <img src="./packages/client/public/images/elixir-ui-logo-transparent.png" alt="Elixir UI" width="200" height="auto">
+</div>
 
 ## ✨ Features
 
