@@ -1,59 +1,91 @@
-# @elixir-labs/ui
+# Elixir UI
 
-Modern Components, super fast shipment.
+🚀 **Modern Components, Super Fast Shipment**
 
-## Description
+A powerful CLI tool for generating beautiful, accessible UI components with modern styling using Tailwind CSS. Build React applications faster with pre-designed, customizable components.
 
-`@elixir-labs/ui` is a CLI tool for generating reusable UI components with modern styling using Tailwind CSS. It helps you quickly scaffold components for your React projects.
+![Elixir UI](./packages/client/public/images/elixir-ui-logo-transparent.png)
 
-## Installation
+## ✨ Features
 
-To use the CLI without installing it globally, you can use `npx`:
+- **🎨 Modern Design**: Beautiful, accessible components following design best practices
+- **⚡ Lightning Fast**: Generate components instantly with a single command
+- **🔧 Highly Customizable**: Easy to customize and extend components to fit your needs
+- **📱 Responsive**: All components are built mobile-first and responsive
+- **♿ Accessible**: WCAG compliant components with proper ARIA attributes
+- **🎭 Framework Agnostic**: Works with Next.js, Vite, Create React App, and more
+- **🔍 Global Search**: Comprehensive documentation with powerful search functionality
 
-```sh
-npx @elixir-labs/ui init
+## 📖 Documentation
+
+Visit our comprehensive documentation at **[https://elixir-ui.vercel.app/docs](https://elixir-ui.vercel.app/docs)** to learn more about:
+
+- **[Getting Started](https://elixir-ui.vercel.app/docs/introduction)** - Introduction and quick start guide
+- **[Installation](https://elixir-ui.vercel.app/docs/installation)** - Installation instructions for different frameworks
+- **[Components](https://elixir-ui.vercel.app/docs/components)** - Complete component documentation with live examples
+- **[Templates](https://elixir-ui.vercel.app/docs/templates)** - Example use cases and templates
+
+## 🚀 Quick Start
+
+### Installation
+
+```bash
+# Initialize your project with Elixir UI
+npx elixir-labs-ui init
+
+# Add your first component
+npx elixir-labs-ui add button
 ```
 
-For more detailed installation instructions, visit the [Installation Guide](https://elixir-ui.vercel.app/docs/installation).
+### Usage
 
-## Usage
+```jsx
+import { Button } from "./components/ui/button";
 
-After initializing the project, you can add new components using the `add` command:
-
-```sh
-npx @elixir-labs/ui add <component-name>
+export function App() {
+  return (
+    <Button variant="default" size="md">
+      Click me
+    </Button>
+  );
+}
 ```
 
-Replace `<component-name>` with the name of the component you want to create. The component will be generated based on the templates provided in the `templates` directory.
+## 🧩 Available Components
 
-For more detailed usage instructions, visit the [Usage Guide](https://elixir-ui.vercel.app/docs/introduction).
+| Component  | Description                                | Documentation                                                 |
+| ---------- | ------------------------------------------ | ------------------------------------------------------------- |
+| **Button** | Interactive buttons with multiple variants | [→ Docs](https://elixir-ui.vercel.app/docs/components/button) |
+| **Card**   | Flexible content containers                | [→ Docs](https://elixir-ui.vercel.app/docs/components/card)   |
+| **Alert**  | Important messages and notifications       | [→ Docs](https://elixir-ui.vercel.app/docs/components/alert)  |
+| **Input**  | Text input fields for forms                | [→ Docs](https://elixir-ui.vercel.app/docs/components/input)  |
+| **Avatar** | User profile pictures and initials         | [→ Docs](https://elixir-ui.vercel.app/docs/components/avatar) |
+| **Badge**  | Status indicators and labels               | [→ Docs](https://elixir-ui.vercel.app/docs/components/badge)  |
 
-## Templates
+## 🛠️ Framework Support
 
-The CLI uses templates located in the `templates` directory to generate components. You can customize these templates or add new ones to fit your needs. The default templates include:
+Elixir UI works seamlessly with popular React frameworks:
 
-- `button.jsx`
-- `general.jsx`
-- `input.jsx`
+- **[Next.js](https://elixir-ui.vercel.app/docs/installation/nextjs)** - Full support with App Router and Pages Router
+- **[Vite](https://elixir-ui.vercel.app/docs/installation/vite)** - Lightning-fast development setup
+- **[Create React App](https://elixir-ui.vercel.app/docs/installation/reactjs)** - Classic React setup support
 
-## Configuration
+## 🎯 Why Elixir UI?
 
-The CLI creates a `components.json` file to keep track of the generated components. This file is updated automatically whenever a new component is added.
+- **Developer Experience**: Spend less time writing repetitive UI code, more time building features
+- **Consistency**: Maintain design consistency across your entire application
+- **Performance**: Optimized components with minimal bundle impact
+- **Accessibility**: Built-in accessibility features following WCAG guidelines
+- **Customization**: Easy to theme and customize to match your brand
 
-## Dependencies
+## 📚 Examples
 
-The CLI installs the following dependencies:
+Check out our [Templates](https://elixir-ui.vercel.app/docs/templates) section for real-world examples and use cases.
 
-- `clsx`
-- `framer-motion`
-- `tailwindcss`
+## 🤝 Contributing
 
-These dependencies are required for the generated components to work correctly.
+We welcome contributions! Please see our contributing guidelines for more details.
 
-## Components
-
-For a list of available components and their usage, visit the [Components Guide](https://elixir-ui.vercel.app/docs/components).
-
-## License
+## 📄 License
 
 This project is licensed under the ISC License.

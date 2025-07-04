@@ -3,20 +3,28 @@ import React from "react";
 
 const components = [
   {
-    name: "Accordion",
-    slug: "accordion",
+    name: "Alert",
+    slug: "alert",
+  },
+  {
+    name: "Avatar",
+    slug: "avatar",
+  },
+  {
+    name: "Badge",
+    slug: "badge",
   },
   {
     name: "Button",
     slug: "button",
   },
   {
-    name: "Input",
-    slug: "input",
+    name: "Card",
+    slug: "card",
   },
   {
-    name: "Toast",
-    slug: "toast",
+    name: "Input",
+    slug: "input",
   },
 ];
 
@@ -72,6 +80,26 @@ const Sidebar: React.FC = () => {
               <li>{component.name}</li>
             </Link>
           ))}
+        </ul>
+      </div>
+
+      {/* list 4 */}
+      <div className="mb-4">
+        <h1 className="font-bold mb-2">Templates</h1>
+        <ul className="text-sm flex  flex-col gap-1">
+          <Link href="/docs/templates">
+            <li>Templates</li>
+          </Link>
+        </ul>
+      </div>
+
+      {/* list 5 */}
+      <div className="mb-4">
+        <h1 className="font-bold mb-2">More</h1>
+        <ul className="text-sm flex  flex-col gap-1">
+          <Link href="/docs/changelog">
+            <li>Changelog</li>
+          </Link>
         </ul>
       </div>
     </div>

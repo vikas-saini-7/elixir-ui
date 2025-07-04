@@ -1,11 +1,15 @@
 import React from "react";
 
 interface DocsParaWhiteProps {
-  text: string;
+  text?: string;
+  children?: React.ReactNode;
 }
 
-const DocsParaWhite: React.FC<DocsParaWhiteProps> = ({ text }) => {
-  return <h2 className="text-white my-3 max-w-[800px]">{text}</h2>;
+const DocsParaWhite: React.FC<DocsParaWhiteProps> = ({ text, children }) => {
+  const content = text || children;
+  return (
+    <p className="text-white my-3 max-w-[800px] leading-relaxed">{content}</p>
+  );
 };
 
 export default DocsParaWhite;
