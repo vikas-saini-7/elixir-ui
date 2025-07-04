@@ -1,59 +1,183 @@
-# @elixir-labs/ui
+# Elixir UI CLI
 
-Modern Components, super fast shipment.
-
-## Description
-
-`@elixir-labs/ui` is a CLI tool for generating reusable UI components with modern styling using Tailwind CSS. It helps you quickly scaffold components for your React projects.
+A modern CLI tool for adding beautiful React components to your project with support for Next.js, Vite, Create React App, and TypeScript.
 
 ## Installation
 
-To use the CLI without installing it globally, you can use `npx`:
+```bash
+npm install -g @elixir-labs/ui
+```
 
-```sh
+Or use with npx:
+
+```bash
+npx @elixir-labs/ui
+```
+
+## Quick Start
+
+1. **Initialize Elixir UI in your project:**
+   ```bash
+   npx @elixir-labs/ui init
+   ```
+
+2. **Add a component:**
+   ```bash
+   npx @elixir-labs/ui add button
+   ```
+
+3. **List available components:**
+   ```bash
+   npx @elixir-labs/ui list
+   ```
+
+## Features
+
+- 🎯 **Smart Framework Detection** - Automatically detects Next.js (App/Pages Router), Vite, Create React App
+- 🔧 **TypeScript Support** - Automatically generates TypeScript components when detected
+- 📁 **Proper Directory Structure** - Creates components in the right location based on your framework
+- 🎨 **Tailwind CSS Integration** - Generates proper Tailwind config with CSS variables
+- 📦 **Component Management** - Tracks installed components in `components.json`
+- 🚀 **Modern Components** - Pre-built components with accessibility and best practices
+
+## Commands
+
+### `init`
+Initializes Elixir UI in your project:
+- Detects your framework (Next.js, Vite, CRA, etc.)
+- Creates components directory structure
+- Generates Tailwind config with CSS variables
+- Creates `components.json` for component tracking
+- Installs necessary dependencies
+- Creates global CSS file with design tokens
+
+```bash
 npx @elixir-labs/ui init
 ```
 
-For more detailed installation instructions, visit the [Installation Guide](https://elixir-ui.vercel.app/docs/installation).
+### `add <component>`
+Adds a component to your project:
+- Creates the component file in the correct directory
+- Uses TypeScript template if your project uses TypeScript
+- Updates the components index file for easy imports
+- Updates `components.json` tracking
 
-## Usage
-
-After initializing the project, you can add new components using the `add` command:
-
-```sh
-npx @elixir-labs/ui add <component-name>
+```bash
+npx @elixir-labs/ui add button
+npx @elixir-labs/ui add card
+npx @elixir-labs/ui add input
 ```
 
-Replace `<component-name>` with the name of the component you want to create. The component will be generated based on the templates provided in the `templates` directory.
+### `list` / `ls`
+Lists all available components and shows which ones are installed:
 
-For more detailed usage instructions, visit the [Usage Guide](https://elixir-ui.vercel.app/docs/introduction).
+```bash
+npx @elixir-labs/ui list
+```
 
-## Templates
+## Available Components
 
-The CLI uses templates located in the `templates` directory to generate components. You can customize these templates or add new ones to fit your needs. The default templates include:
+- **button** - Versatile button component with multiple variants
+- **card** - Card component with header, content, and footer
+- **input** - Styled input component
+- **badge** - Badge/tag component for labels
+- **alert** - Alert component for notifications
+- **avatar** - Avatar component with image and fallback
+- **general** - Generic template for custom components
 
-- `button.jsx`
-- `general.jsx`
-- `input.jsx`
+## Framework Support
 
-## Configuration
+### Next.js
+- **App Router**: Components created in `app/components/ui/`
+- **Pages Router**: Components created in `components/ui/`
+- Auto-detects router type and TypeScript usage
 
-The CLI creates a `components.json` file to keep track of the generated components. This file is updated automatically whenever a new component is added.
+### Vite
+- Components created in `src/components/ui/` (if src exists) or `components/ui/`
 
-## Dependencies
+### Create React App
+- Components created in `src/components/ui/`
 
-The CLI installs the following dependencies:
+### TypeScript
+Automatically detects TypeScript projects and:
+- Uses `.tsx` files instead of `.jsx`
+- Generates TypeScript-compatible templates
+- Includes proper type definitions
 
-- `clsx`
-- `framer-motion`
-- `tailwindcss`
+## File Structure
 
-These dependencies are required for the generated components to work correctly.
+After running `init`, your project will have:
 
-## Components
+```
+your-project/
+├── components.json          # Component tracking
+├── tailwind.config.js       # Tailwind config with CSS variables
+├── app/globals.css          # (Next.js App Router) or
+├── src/index.css           # (Other frameworks) - Design tokens
+└── components/ui/          # Component directory
+    ├── index.ts            # Component exports
+    └── Button.tsx          # Example component
+```
 
-For a list of available components and their usage, visit the [Components Guide](https://elixir-ui.vercel.app/docs/components).
+## Usage in Your App
+
+After adding components, import them:
+
+```tsx
+// Direct import
+import { Button } from './components/ui/Button';
+
+// From index file
+import { Button, Card, Input } from './components/ui';
+
+// Usage
+function App() {
+  return (
+    <div>
+      <Button variant="primary" size="lg">
+        Click me
+      </Button>
+      <Card>
+        <CardHeader>
+          <CardTitle>Hello World</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>This is a card component.</p>
+        </CardContent>
+      </Card>
+    </div>
+  );
+}
+```
+
+## CSS Variables
+
+The CLI automatically sets up CSS variables for consistent theming:
+
+```css
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --primary: 221.2 83.2% 53.3%;
+  --secondary: 210 40% 96%;
+  /* ... and more */
+}
+```
+
+## Contributing
+
+Want to add more components? Create a template file in the `templates/` directory:
+
+1. Create `component-name.jsx` (and optionally `component-name.tsx`)
+2. Use `COMPONENT_NAME` as a placeholder for the component name
+3. Include proper TypeScript types if creating a `.tsx` template
 
 ## License
 
-This project is licensed under the ISC License.
+ISC License - feel free to use in your projects!
+
+## Support
+
+- 🐛 [Report Issues](https://github.com/elixir-labs/ui/issues)
+- 📖 [Documentation](https://github.com/elixir-labs/ui)
+- 💬 [Discussions](https://github.com/elixir-labs/ui/discussions)

@@ -1,49 +1,37 @@
-import clsx from "clsx";
+import React from 'react';
+import { clsx } from 'clsx';
 
-const COMPONENT_NAME = ({ 
-  src, 
-  alt = "", 
-  size = "md",
-  fallback,
-  className, 
-  ...props 
-}) => {
-  const sizeStyles = {
-    sm: "h-8 w-8",
-    md: "h-10 w-10",
-    lg: "h-12 w-12",
-    xl: "h-16 w-16",
-  };
+const Avatar = React.forwardRef(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={clsx(
+      'relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full',
+      className
+    )}
+    {...props}
+  />
+));
+Avatar.displayName = 'Avatar';
 
-  const getFallback = () => {
-    if (fallback) return fallback;
-    if (alt) return alt.charAt(0).toUpperCase();
-    return "U";
-  };
+const AvatarImage = React.forwardRef(({ className, ...props }, ref) => (
+  <img
+    ref={ref}
+    className={clsx('aspect-square h-full w-full', className)}
+    {...props}
+  />
+));
+AvatarImage.displayName = 'AvatarImage';
 
-  return (
-    <div
-      className={clsx(
-        "relative inline-flex items-center justify-center overflow-hidden rounded-full bg-gray-200",
-        sizeStyles[size] || sizeStyles.md,
-        className
-      )}
-      {...props}
-    >
-      {src ? (
-        <img
-          src={src}
-          alt={alt}
-          className="h-full w-full object-cover"
-          onError={(e) => {
-            e.target.style.display = "none";
-          }}
-        />
-      ) : (
-        <span className="text-gray-600 font-medium">{getFallback()}</span>
-      )}
-    </div>
-  );
-};
+const AvatarFallback = React.forwardRef(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={clsx(
+      'flex h-full w-full items-center justify-center rounded-full bg-muted',
+      className
+    )}
+    {...props}
+  />
+));
+AvatarFallback.displayName = 'AvatarFallback';
 
-export default COMPONENT_NAME;
+export { Avatar, AvatarImage, AvatarFallback };
