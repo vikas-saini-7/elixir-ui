@@ -1,7 +1,13 @@
+"use client";
 import { IconBrandGithub, IconBrandX } from "@tabler/icons-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
+  const pathname = usePathname();
+  if (pathname === "/") {
+    return null; // Do not render footer on the /docs page
+  }
   return (
     <footer className="border-t border-gray-500/20">
       <div className="container flex flex-col gap-8 px-4 py-10 md:flex-row md:py-14">

@@ -20,30 +20,54 @@ const DocsPage: React.FC = () => {
         Get up and running in minutes with these simple steps:
       </DocsPara>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
+      <div className="space-y-6 my-8">
         <div className="border border-gray-700 rounded-lg p-6 hover:border-gray-600 transition-colors">
-          <div className="text-2xl mb-3">1️⃣</div>
-          <h3 className="font-semibold text-lg mb-2">Install</h3>
-          <DocsParaFaded>Initialize Elixir UI in your project</DocsParaFaded>
-          <CodeBlock>npx @elixir-labs/ui init</CodeBlock>
+          <div className="flex items-start gap-4">
+            <div className="text-2xl flex-shrink-0">1. </div>
+            <div className="flex-1">
+              <h3 className="font-semibold text-lg mb-2">Install</h3>
+              <DocsParaFaded>
+                Initialize Elixir UI in your project
+              </DocsParaFaded>
+              <div className="mt-4">
+                <CodeBlock codeLanguage="bash">
+                  npx @elixir-labs/ui init
+                </CodeBlock>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="border border-gray-700 rounded-lg p-6 hover:border-gray-600 transition-colors">
-          <div className="text-2xl mb-3">2️⃣</div>
-          <h3 className="font-semibold text-lg mb-2">Add Components</h3>
-          <DocsParaFaded>Add the components you need</DocsParaFaded>
-          <CodeBlock>npx @elixir-labs/ui add button</CodeBlock>
+          <div className="flex items-start gap-4">
+            <div className="text-2xl flex-shrink-0">2. </div>
+            <div className="flex-1">
+              <h3 className="font-semibold text-lg mb-2">Add Components</h3>
+              <DocsParaFaded>Add the components you need</DocsParaFaded>
+              <div className="mt-4">
+                <CodeBlock codeLanguage="bash">
+                  npx @elixir-labs/ui add button
+                </CodeBlock>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="border border-gray-700 rounded-lg p-6 hover:border-gray-600 transition-colors">
-          <div className="text-2xl mb-3">3️⃣</div>
-          <h3 className="font-semibold text-lg mb-2">Use & Customize</h3>
-          <DocsParaFaded>Import and use in your components</DocsParaFaded>
-          <CodeBlock codeLanguage="jsx">
-            {`import { Button } from "@/components/ui/button";
+          <div className="flex items-start gap-4">
+            <div className="text-2xl flex-shrink-0">3. </div>
+            <div className="flex-1">
+              <h3 className="font-semibold text-lg mb-2">Use & Customize</h3>
+              <DocsParaFaded>Import and use in your components</DocsParaFaded>
+              <div className="mt-4">
+                <CodeBlock codeLanguage="jsx">
+                  {`import { Button } from "@/components/ui/button";
 
 <Button>Click me</Button>`}
-          </CodeBlock>
+                </CodeBlock>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
